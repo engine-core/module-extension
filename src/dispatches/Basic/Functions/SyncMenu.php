@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
+ * @copyright Copyright (c) 2021 engine-core
  * @license BSD 3-Clause License
  */
 
@@ -17,12 +17,12 @@ use Yii;
  */
 class SyncMenu extends Dispatch
 {
-    
+
     /**
      * @var FunctionsController
      */
     public $controller;
-    
+
     public function run()
     {
         if (Ec::$service->getMenu()->getConfig()->sync()) {
@@ -31,5 +31,5 @@ class SyncMenu extends Dispatch
             $this->response->error(Yii::t('ec/modules/extension', 'Synchronization failed.'), Yii::$app->getRequest()->getReferrer());
         }
     }
-    
+
 }

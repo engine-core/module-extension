@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
+ * @copyright Copyright (c) 2021 engine-core
  * @license BSD 3-Clause License
  */
 
@@ -17,17 +17,17 @@ use Yii;
  */
 class ClearCache extends Dispatch
 {
-    
+
     /**
      * @var FunctionsController
      */
     public $controller;
-    
+
     public function run()
     {
         Ec::$service->getExtension()->clearCache();
-        
+
         $this->response->success(Yii::t('ec/modules/extension', 'Clean up succeeded.'), Yii::$app->getRequest()->getReferrer());
     }
-    
+
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
+ * @copyright Copyright (c) 2021 engine-core
  * @license BSD 3-Clause License
  */
 
@@ -21,12 +21,12 @@ use yii\data\ArrayDataProvider;
  */
 class Index extends Dispatch
 {
-    
+
     /**
      * @var ConfigController|ModuleController|ControllerController|ThemeController
      */
     public $controller;
-    
+
     /**
      * @param string $app 应用ID
      *
@@ -35,17 +35,17 @@ class Index extends Dispatch
     public function run($app = AppEnum::BACKEND)
     {
         $dataProvider = new ArrayDataProvider([
-            'allModels'  => $this->controller->repository->getConfigurationByApp(false, $app),
+            'allModels' => $this->controller->repository->getConfigurationByApp(false, $app),
             'pagination' => [
                 'pageSize' => -1, //不使用分页
             ],
         ]);
-        
+
         return $this->response->render(null, [
             'dataProvider' => $dataProvider,
-            'app'          => $app,
-            'runList'      => Ec::$service->getExtension()->getRunModeList(),
+            'app' => $app,
+            'runList' => Ec::$service->getExtension()->getRunModeList(),
         ]);
     }
-    
+
 }

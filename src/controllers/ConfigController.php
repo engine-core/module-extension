@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
- * @license   BSD 3-Clause License
+ * @link https://github.com/engine-core/module-extension
+ * @copyright Copyright (c) 2021 engine-core
+ * @license BSD 3-Clause License
  */
 
 namespace EngineCore\modules\extension\controllers;
@@ -15,12 +15,12 @@ use yii\filters\VerbFilter;
 
 class ConfigController extends Controller
 {
-    
+
     /**
      * @var Module
      */
     public $module;
-    
+
     /**
      * @inheritdoc
      */
@@ -47,12 +47,12 @@ class ConfigController extends Controller
             'class' => 'EngineCore\modules\extension\dispatches\Basic\Uninstall',
         ],
     ];
-    
+
     /**
      * @var ConfigRepository
      */
     public $repository;
-    
+
     /**
      * @inheritdoc
      */
@@ -61,7 +61,7 @@ class ConfigController extends Controller
         $this->repository = Ec::$service->getExtension()->getConfigRepository();
         parent::__construct($id, $module, $config);
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -69,12 +69,12 @@ class ConfigController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'uninstall' => ['post'],
                 ],
             ],
         ];
     }
-    
+
 }

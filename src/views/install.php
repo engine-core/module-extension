@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
- * @license   BSD 3-Clause License
+ * @link https://github.com/engine-core/module-extension
+ * @copyright Copyright (c) 2021 engine-core
+ * @license BSD 3-Clause License
  */
 
 use EngineCore\Ec;

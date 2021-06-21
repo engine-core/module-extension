@@ -1,7 +1,7 @@
 <?php
 /**
  * @link https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
+ * @copyright Copyright (c) 2021 engine-core
  * @license BSD 3-Clause License
  */
 
@@ -21,14 +21,14 @@ use yii\web\NotFoundHttpException;
  */
 class Uninstall extends Dispatch
 {
-    
+
     /**
      * @var ThemeController
      */
     public $controller;
-    
+
     /**
-     * @param string $id  扩展名称
+     * @param string $id 扩展名称
      * @param string $app 应用ID
      *
      * @throws NotFoundHttpException
@@ -49,13 +49,13 @@ class Uninstall extends Dispatch
                     /** @var $event \yii\base\ModelEvent */
                     if (!$event->sender::updateAll(['status' => EnableEnum::ENABLE], [
                         'unique_name' => $defaultTheme,
-                        'app'         => $app,
+                        'app' => $app,
                     ])) {
                         $event->isValid = false;
                     }
                 });
             }
-            
+
             return $model->delete();
         });
         if ($res) {
@@ -64,5 +64,5 @@ class Uninstall extends Dispatch
             $this->response->error('卸载失败！', ['index', 'app' => $app]);
         }
     }
-    
+
 }

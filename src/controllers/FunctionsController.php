@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
- * @license   BSD 3-Clause License
+ * @link https://github.com/engine-core/module-extension
+ * @copyright Copyright (c) 2021 engine-core
+ * @license BSD 3-Clause License
  */
 
 namespace EngineCore\modules\extension\controllers;
@@ -13,14 +13,14 @@ use yii\filters\VerbFilter;
 
 class FunctionsController extends Controller
 {
-    
+
     /**
      * @var Module
      */
     public $module;
-    
+
     protected $defaultDispatchMap = ['sync-menu', 'clear-cache', 'refresh-config'];
-    
+
     /**
      * @inheritdoc
      */
@@ -28,14 +28,14 @@ class FunctionsController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
-                    'sync-menu'   => ['post'],
+                    'sync-menu' => ['post'],
                     'clear-cache' => ['post'],
                     'refresh-config' => ['post'],
                 ],
             ],
         ];
     }
-    
+
 }

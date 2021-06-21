@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
- * @license   BSD 3-Clause License
+ * @link https://github.com/engine-core/module-extension
+ * @copyright Copyright (c) 2021 engine-core
+ * @license BSD 3-Clause License
  */
 
 namespace EngineCore\modules\extension\controllers;
@@ -15,21 +15,21 @@ use yii\filters\VerbFilter;
 
 class ThemeController extends Controller
 {
-    
+
     /**
      * @var Module
      */
     public $module;
-    
+
     /**
      * @inheritdoc
      */
     protected $defaultDispatchMap = [
-        'index'   => [
-            'class'    => 'EngineCore\modules\extension\dispatches\Basic\Index',
+        'index' => [
+            'class' => 'EngineCore\modules\extension\dispatches\Basic\Index',
         ],
-        'update'  => [
-            'class'    => 'EngineCore\modules\extension\dispatches\Basic\Update',
+        'update' => [
+            'class' => 'EngineCore\modules\extension\dispatches\Basic\Update',
             'response' => [
                 'viewFile' => '@EngineCore/modules/extension/views/update.php',
             ],
@@ -42,12 +42,12 @@ class ThemeController extends Controller
         'uninstall',
         'enable',
     ];
-    
+
     /**
      * @var ThemeRepository
      */
     public $repository;
-    
+
     /**
      * @inheritdoc
      */
@@ -56,7 +56,7 @@ class ThemeController extends Controller
         $this->repository = Ec::$service->getExtension()->getThemeRepository();
         parent::__construct($id, $module, $config);
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -64,7 +64,7 @@ class ThemeController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'uninstall' => ['post'],
                     'enable' => ['post'],
@@ -72,5 +72,5 @@ class ThemeController extends Controller
             ],
         ];
     }
-    
+
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://github.com/EngineCore/module-extension
- * @copyright Copyright (c) 2020 E-Kevin
- * @license   BSD 3-Clause License
+ * @link https://github.com/engine-core/module-extension
+ * @copyright Copyright (c) 2021 engine-core
+ * @license BSD 3-Clause License
  */
 
 namespace EngineCore\modules\extension\controllers;
@@ -15,7 +15,7 @@ use yii\filters\VerbFilter;
 
 class ModuleController extends Controller
 {
-    
+
     /**
      * @var Module
      */
@@ -25,30 +25,30 @@ class ModuleController extends Controller
      * @inheritdoc
      */
     protected $defaultDispatchMap = [
-        'index'           => [
+        'index' => [
             'class' => 'EngineCore\modules\extension\dispatches\Basic\Index',
         ],
-        'update'          => [
+        'update' => [
             'response' => [
                 'viewFile' => '@EngineCore/modules/extension/views/update.php',
             ],
         ],
-        'install'         => [
-            'class'    => 'EngineCore\modules\extension\dispatches\Basic\Install',
+        'install' => [
+            'class' => 'EngineCore\modules\extension\dispatches\Basic\Install',
             'response' => [
                 'viewFile' => '@EngineCore/modules/extension/views/install.php',
             ],
         ],
-        'uninstall'       => [
+        'uninstall' => [
             'class' => 'EngineCore\modules\extension\dispatches\Basic\Uninstall',
         ],
     ];
-    
+
     /**
      * @var ModularityRepository
      */
     public $repository;
-    
+
     /**
      * @inheritdoc
      */
@@ -57,7 +57,7 @@ class ModuleController extends Controller
         $this->repository = Ec::$service->getExtension()->getModularityRepository();
         parent::__construct($id, $module, $config);
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -65,12 +65,12 @@ class ModuleController extends Controller
     {
         return [
             'verbs' => [
-                'class'   => VerbFilter::class,
+                'class' => VerbFilter::class,
                 'actions' => [
                     'uninstall' => ['post'],
                 ],
             ],
         ];
     }
-    
+
 }

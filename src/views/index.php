@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://github.com/engine-core/module-extension
- * @copyright Copyright (c) 2021 E-Kevin
- * @license   BSD 3-Clause License
+ * @link https://github.com/engine-core/module-extension
+ * @copyright Copyright (c) 2021 engine-core
+ * @license BSD 3-Clause License
  */
 
 use EngineCore\Ec;
@@ -48,11 +48,11 @@ $column = [
             /** @var ExtensionInfo $infoInstance */
             return $infoInstance->getConfiguration()->getVersion();
         },
-        'label'     => Yii::t('ec/modules/extension', 'Version'),
+        'label'     => Yii::t('ec/extension', 'Version'),
     ],
     [
         'format' => 'html',
-        'label'  => Yii::t('ec/modules/extension', 'Run Mode'),
+        'label'  => Yii::t('ec/extension', 'Run Mode'),
         'value'  => function ($infoInstance) use ($runList) {
             /** @var ExtensionInfo $infoInstance */
             $run = !$infoInstance->getCanInstall() ? $infoInstance->getRunMode() : -1;
@@ -70,12 +70,12 @@ $column = [
     ],
     [
         'class'     => 'kartik\grid\BooleanColumn',
-        'label'     => Yii::t('ec/modules/extension', 'Is System'),
+        'label'     => Yii::t('ec/extension', 'Is System'),
         'attribute' => 'isSystem',
     ],
     [
         'class'     => 'kartik\grid\BooleanColumn',
-        'label'     => Yii::t('ec/modules/extension', 'Status'),
+        'label'     => Yii::t('ec/extension', 'Status'),
         'attribute' => 'isEnable',
     ],
     [

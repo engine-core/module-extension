@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://github.com/EngineCore/module-extension
- * @copyright Copyright (c) 2020 E-Kevin
- * @license   BSD 3-Clause License
+ * @link https://github.com/engine-core/module-extension
+ * @copyright Copyright (c) 2021 engine-core
+ * @license BSD 3-Clause License
  */
 
 declare(strict_types=1);
@@ -18,10 +18,10 @@ use EngineCore\base\Modularity;
  */
 class Module extends Modularity
 {
-    
+
     /**
      * @inheritdoc
      */
     public $defaultRoute = 'module';
-    
+
 }
